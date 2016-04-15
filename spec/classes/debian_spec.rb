@@ -16,4 +16,16 @@ describe 'mirrorbrain::debian' do
       })
     end
   end
+
+
+  context 'mirrorbrain command line tooling' do
+    it { should contain_package 'mirrorbrain' }
+    it { should contain_package 'mirrorbrain-tools' }
+    it { should contain_package 'mirrorbrain-scanner' }
+  end
+
+  context 'geoip packaging' do
+    it { should contain_package 'geoip-bin' }
+    it { should contain_package 'geoip-database' }
+  end
 end

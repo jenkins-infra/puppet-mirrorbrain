@@ -8,4 +8,10 @@ class mirrorbrain {
 
   include mirrorbrain::debian
 
+  cron { 'geoip-update':
+    command => '/usr/bin/geoip-lite-update',
+    user    => 'root',
+    hour    => 4,
+    minute  => 20,
+  }
 }

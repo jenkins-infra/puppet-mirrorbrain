@@ -19,4 +19,9 @@ describe 'mirrorbrain' do
 
 
   it { should contain_class 'mirrorbrain::debian' }
+
+
+  context 'geoip updates' do
+    it { should contain_cron 'geoip-update' }
+  end
 end
