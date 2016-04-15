@@ -1,0 +1,14 @@
+{
+  "name": "rtyler-mirrorbrain",
+  "version": "0.1.0",
+  "author": "rtyler",
+  "summary": "Module for managing a MirrorBrain mirror redirector instance",
+  "license": "MIT",
+  "source": "https://github.com/jenkins-infra/puppet-mirrorbrain",
+  "project_page": "https://github.com/jenkins-infra/puppet-mirrorbrain",
+  "issues_url": "https://github.com/jenkins-infra/puppet-mirrorbrain/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
