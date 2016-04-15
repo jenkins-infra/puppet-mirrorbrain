@@ -16,4 +16,7 @@ describe 'mirrorbrain' do
       expect(subject).to raise_error(Puppet::Error)
     end
   end
+
+
+  it { should contain_class 'mirrorbrain::debian' }
 end

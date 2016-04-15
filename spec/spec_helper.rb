@@ -12,6 +12,7 @@ $LOAD_PATH.unshift(*Dir["#{FIXTURES_PATH}/modules/*/lib"])
 RSpec.configure do |r|
   r.default_facts = {
     :osfamily => 'Debian',
+    :lsbdistid => 'Ubuntu',
     :lsbdistrelease => '14.04',
     :operatingsystem => 'Ubuntu',
     :operatingsystemrelease => '14.04',

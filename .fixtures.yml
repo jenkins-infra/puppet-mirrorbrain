@@ -9,5 +9,8 @@ fixtures:
     apache:
       repo: 'puppetlabs/apache'
       ref: '1.8.1'
+    apt:
+      repo: 'puppetlabs/apt'
+      ref: '2.2.2'
   symlinks:
     mirrorbrain: "#{source_dir}"
