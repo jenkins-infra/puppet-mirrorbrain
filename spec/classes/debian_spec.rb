@@ -7,11 +7,11 @@ describe 'mirrorbrain::debian' do
   context 'an apt repository' do
     it 'should include the Apache OBS repository' do
       expect(subject).to contain_apt__source('apache-obs').with({
-        :location => 'http://download.opensuse.org/repositories/Apache:/MirrorBrain/xUbuntu_12.04/',
+        :location => 'http://download.opensuse.org/repositories/home:/agentdero:/mirrorbrain/xUbuntu_14.04',
         :repos => '/',
         :key => {
           'server' => 'pgp.mit.edu',
-          'id' => 'EDDDC98D96A0F8899AB07C789584A164BD6D129A',
+          'id' => '77F11CCF1AFBE15388CE93239FAAEC7EA5638A16'
         },
       })
     end
