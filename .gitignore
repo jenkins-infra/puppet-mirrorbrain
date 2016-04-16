@@ -3,3 +3,4 @@ log/
 .ruby-*
 *.sw*
 spec/fixtures
+.vagrant*

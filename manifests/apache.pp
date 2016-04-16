@@ -10,5 +10,5 @@ class mirrorbrain::apache {
   include mirrorbrain::apache::debian
   contain('mirrorbrain::apache::debian')
 
-  apache::mod { 'mod_geoip': }
+  apache::mod { ['mod_asn', 'mod_autoindex_mb', 'mod_dbd', 'mod_form', 'mod_geoip', 'mod_mirrorbrain']: }
 }
