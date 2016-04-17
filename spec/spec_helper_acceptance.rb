@@ -2,7 +2,7 @@ require 'beaker-rspec'
 
 # Install Puppet on all hosts
 hosts.each do |host|
-  on host, install_puppet
+  install_puppet_on host, :default_action => 'gem_install'
 end
 
 RSpec.configure do |c|
@@ -19,7 +19,12 @@ RSpec.configure do |c|
         :target_module_path => '/etc/puppet/modules')
 
       # Install dependencies
-      on(host, puppet('module', 'install', 'puppetlabs-stdlib'))
+      ['puppetlabs-stdlib',
+       'puppetlabs-apt',
+       'puppetlabs-apache',
+      ].each do |dependency|
+        on(host, puppet('module', 'install', dependency))
+      end
     end
   end
 end
