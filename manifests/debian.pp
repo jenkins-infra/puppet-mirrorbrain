@@ -35,7 +35,7 @@ class mirrorbrain::debian(
     ],
   }
 
-  package { ['geoip-bin', 'geoip-database']:
+  package { ['geoip-bin', 'geoip-database', 'mirmon']:
     ensure => present,
   }
 }

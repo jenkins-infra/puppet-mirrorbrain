@@ -32,4 +32,6 @@ describe 'mirrorbrain::debian' do
     it { should contain_package 'geoip-bin' }
     it { should contain_package 'geoip-database' }
   end
+
+  it { should contain_package 'mirmon' }
 end
