@@ -1,9 +1,10 @@
 #
 # Manage Debian-specific repositories/dependencies
-class mirrorbrain::debian {
+class mirrorbrain::debian(
+  $apt_repo = 'apache-mirrorbrain-obs',
+) {
   include ::apt
 
-  $apt_repo = 'apache-mirrorbrain-obs'
 
   apt::key { $apt_repo:
     ensure => present,

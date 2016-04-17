@@ -9,7 +9,10 @@ class mirrorbrain::apache::debian {
             'libapache2-mod-asn',
             'libapache2-mod-form',
             'libapache2-mod-geoip']:
-    ensure  => latest,
-    require => Apt::Source['apache-obs'],
+    ensure  => present,
+    require => [
+      File["/etc/apt/sources.list.d/${::mirrorbrain::debian::apt_repo}.list"],
+      Class['Apt::Update'],
+    ],
   }
 }
