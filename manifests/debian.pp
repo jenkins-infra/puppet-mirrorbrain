@@ -28,7 +28,10 @@ class mirrorbrain::debian {
 
   package { ['mirrorbrain', 'mirrorbrain-tools', 'mirrorbrain-scanner']:
     ensure  => present,
-    require => File["/etc/apt/sources.list.d/${apt_repo}.list"],
+    require => [
+      File["/etc/apt/sources.list.d/${apt_repo}.list"],
+      Class['Apt::Update'],
+    ],
   }
 
   package { ['geoip-bin', 'geoip-database']:
