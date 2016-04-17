@@ -12,11 +12,18 @@ describe 'mirrorbrain::apache class' do
     apply_manifest(manifest, :catch_changes => true)
   end
 
-  describe package('libapache2-mod-mirrorbrain') do
-    before :each do
-      apply_manifest manifest
+  context 'checks once applied' do
+    before :all do
+      apply_manifest 'include mirrorbrain::apache'
     end
 
-    it { is_expected.to be_installed }
+    describe package('libapache2-mod-mirrorbrain') do
+      it { is_expected.to be_installed }
+    end
+
+    describe service('apache2') do
+      it { should be_running }
+      it { should be_enabled }
+    end
   end
 end
