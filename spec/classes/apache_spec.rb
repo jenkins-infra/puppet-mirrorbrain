@@ -9,7 +9,6 @@ describe 'mirrorbrain::apache' do
   it { should contain_class 'apache::mod::event' }
 
   context 'enable Apache modules' do
-    it { should contain_apache__mod 'asn' }
     it { should contain_apache__mod 'dbd' }
     it { should contain_apache__mod 'form' }
     it { should contain_apache__mod 'geoip' }
